@@ -12,11 +12,13 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.compose.rememberNavController
 import com.kuit.kuit5_solutions.navigation.BottomNavItem
@@ -71,10 +73,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     contentWindowInsets = WindowInsets.safeDrawing,
                     bottomBar = {
-                        NavigationBar {
+                        NavigationBar(
+                            containerColor = Color.White,
+                        ) {
                             navBarItems.forEachIndexed { index, item ->
                                 NavigationBarItem(
                                     selected = selectedIndex == index,
+                                    alwaysShowLabel = true,
+                                    label = {
+                                        Text(
+                                            text = item.label,
+                                            color = if (index == selectedIndex){
+                                                Color.Black
+                                            } else Color.Gray
+                                        )
+                                    },
                                     onClick = {
                                         selectedIndex = index
                                         navController.navigate(item.route)
@@ -82,7 +95,7 @@ class MainActivity : ComponentActivity() {
                                     icon = {
                                         Icon(
                                             painter = painterResource(
-                                                if (index == selectedIndex){
+                                                if (index == selectedIndex) {
                                                     item.selectedIcon
                                                 } else item.unselectedIcon
                                             ),
