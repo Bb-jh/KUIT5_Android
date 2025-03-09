@@ -22,23 +22,23 @@ fun KuitNavGraph(
     ){
         // 홈
         composable(route = Route.Home.route) {
-            HomeScreen()
+            HomeScreen(modifier = modifier)
         }
         // 자산
         composable(route = Route.Assets.route) {
-            AssetsScreen()
+            AssetsScreen(modifier = modifier)
         }
         // 가계부
         composable(route = Route.Records.route) {
-            RecordsScreen()
+            RecordsScreen(modifier = modifier)
         }
         // 건강
         composable(route = Route.Health.route) {
-            HealthScreen()
+            HealthScreen(modifier = modifier)
         }
         // 금융쇼핑
         composable(route = Route.Shopping.route) {
-            ShoppingScreen()
+            ShoppingScreen(modifier = modifier)
         }
     }
 }
