@@ -4,13 +4,26 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.navigation.compose.rememberNavController
+import com.kuit.kuit5_solutions.navigation.BottomNavItem
+import com.kuit.kuit5_solutions.navigation.KuitNavGraph
+import com.kuit.kuit5_solutions.navigation.Route
 import com.kuit.kuit5_solutions.ui.theme.KUIT5_SolutionsTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +32,87 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             KUIT5_SolutionsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                val navController = rememberNavController()
+
+                val navBarItems = listOf(
+                    BottomNavItem(
+                        label = "홈",
+                        route = Route.Home.route,
+                        selectedIcon = R.drawable.ic_home,
+                        unselectedIcon = R.drawable.ic_x
+                    ),
+                    BottomNavItem(
+                        label = "자산",
+                        route = Route.Assets.route,
+                        selectedIcon = R.drawable.ic_home,
+                        unselectedIcon = R.drawable.ic_x
+                    ),
+                    BottomNavItem(
+                        label = "가계부",
+                        route = Route.Records.route,
+                        selectedIcon = R.drawable.ic_home,
+                        unselectedIcon = R.drawable.ic_x
+                    ),
+                    BottomNavItem(
+                        label = "건강",
+                        route = Route.Health.route,
+                        selectedIcon = R.drawable.ic_home,
+                        unselectedIcon = R.drawable.ic_x
+                    ),
+                    BottomNavItem(
+                        label = "금융쇼핑",
+                        route = Route.Shopping.route,
+                        selectedIcon = R.drawable.ic_home,
+                        unselectedIcon = R.drawable.ic_x
+                    )
+                )
+
+                var selectedIndex by rememberSaveable { mutableIntStateOf(0) }
+
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    contentWindowInsets = WindowInsets.safeDrawing,
+                    bottomBar = {
+                        NavigationBar(
+                            containerColor = Color.White,
+                        ) {
+                            navBarItems.forEachIndexed { index, item ->
+                                NavigationBarItem(
+                                    selected = selectedIndex == index,
+                                    alwaysShowLabel = true,
+                                    label = {
+                                        Text(
+                                            text = item.label,
+                                            color = if (index == selectedIndex){
+                                                Color.Black
+                                            } else Color.Gray
+                                        )
+                                    },
+                                    onClick = {
+                                        selectedIndex = index
+                                        navController.navigate(item.route)
+                                    },
+                                    icon = {
+                                        Icon(
+                                            painter = painterResource(
+                                                if (index == selectedIndex) {
+                                                    item.selectedIcon
+                                                } else item.unselectedIcon
+                                            ),
+                                            contentDescription = item.label
+                                        )
+                                    }
+                                )
+                            }
+                        }
+                    }
+                ) { innerPadding ->
+                    KuitNavGraph(
+                        navController = navController,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    KUIT5_SolutionsTheme {
-        Greeting("Android")
     }
 }
