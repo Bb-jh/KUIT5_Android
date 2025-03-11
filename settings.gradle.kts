@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KUIT5_Solutions"
+rootProject.name = "KUIT5"
 include(":app")
  

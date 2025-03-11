@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions.navigation
+package com.kuit.kuit5.navigation
 
 data class BottomNavItem(
     val label: String,

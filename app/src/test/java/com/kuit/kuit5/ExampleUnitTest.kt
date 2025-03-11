@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions
+package com.kuit.kuit5
 
 import org.junit.Test
 

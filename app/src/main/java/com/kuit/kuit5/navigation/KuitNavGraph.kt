@@ -1,15 +1,15 @@
-package com.kuit.kuit5_solutions.navigation
+package com.kuit.kuit5.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.kuit.kuit5_solutions.AssetsScreen
-import com.kuit.kuit5_solutions.HealthScreen
-import com.kuit.kuit5_solutions.HomeScreen
-import com.kuit.kuit5_solutions.RecordsScreen
-import com.kuit.kuit5_solutions.ShoppingScreen
+import com.kuit.kuit5.AssetsScreen
+import com.kuit.kuit5.HealthScreen
+import com.kuit.kuit5.HomeScreen
+import com.kuit.kuit5.RecordsScreen
+import com.kuit.kuit5.ShoppingScreen
 
 @Composable
 fun KuitNavGraph(

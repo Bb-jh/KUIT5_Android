@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions
+package com.kuit.kuit5
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -21,17 +21,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.compose.rememberNavController
-import com.kuit.kuit5_solutions.navigation.BottomNavItem
-import com.kuit.kuit5_solutions.navigation.KuitNavGraph
-import com.kuit.kuit5_solutions.navigation.Route
-import com.kuit.kuit5_solutions.ui.theme.KUIT5_SolutionsTheme
+import com.kuit.kuit5.navigation.BottomNavItem
+import com.kuit.kuit5.navigation.KuitNavGraph
+import com.kuit.kuit5.navigation.Route
+import com.kuit.kuit5.ui.theme.KUIT5Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            KUIT5_SolutionsTheme {
+            KUIT5Theme {
                 val navController = rememberNavController()
 
                 val navBarItems = listOf(

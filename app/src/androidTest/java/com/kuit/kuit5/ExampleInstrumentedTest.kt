@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions
+package com.kuit.kuit5
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.kuit.kuit5_solutions", appContext.packageName)
+        assertEquals("com.kuit.kuit5", appContext.packageName)
     }
 }

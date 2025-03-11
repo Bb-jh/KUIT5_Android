@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions.ui.theme
+package com.kuit.kuit5.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

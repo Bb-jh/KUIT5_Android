@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.kuit.kuit5_solutions"
+    namespace = "com.kuit.kuit5"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.kuit.kuit5_solutions"
+        applicationId = "com.kuit.kuit5"
         minSdk = 29
         targetSdk = 35
         versionCode = 1

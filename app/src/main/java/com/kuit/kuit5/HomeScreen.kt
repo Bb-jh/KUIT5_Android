@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions
+package com.kuit.kuit5
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
@@ -6,8 +6,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun HealthScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
-        Text(text = "Health Screen")
+        Text(text = "Home Screen")
     }
 }

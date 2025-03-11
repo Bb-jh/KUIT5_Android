@@ -1,4 +1,4 @@
-package com.kuit.kuit5_solutions.navigation
+package com.kuit.kuit5.navigation
 
 sealed class Route(val route: String) {
     // 홈
