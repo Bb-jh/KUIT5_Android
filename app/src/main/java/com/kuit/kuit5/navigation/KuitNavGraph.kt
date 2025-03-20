@@ -5,11 +5,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.kuit.kuit5.AssetsScreen
-import com.kuit.kuit5.HealthScreen
-import com.kuit.kuit5.HomeScreen
-import com.kuit.kuit5.RecordsScreen
-import com.kuit.kuit5.ShoppingScreen
+import com.kuit.kuit5.ui.assets.screen.AssetsScreen
+import com.kuit.kuit5.ui.health.screen.HealthScreen
+import com.kuit.kuit5.ui.home.screen.HomeScreen
+import com.kuit.kuit5.ui.records.screen.RecordsScreen
+import com.kuit.kuit5.ui.shopping.screen.ShoppingScreen
 
 @Composable
 fun KuitNavGraph(
@@ -22,23 +22,23 @@ fun KuitNavGraph(
     ){
         // 홈
         composable(route = Route.Home.route) {
-            HomeScreen(modifier = modifier)
+            HomeScreen()
         }
         // 자산
         composable(route = Route.Assets.route) {
-            AssetsScreen(modifier = modifier)
+            AssetsScreen()
         }
         // 가계부
         composable(route = Route.Records.route) {
-            RecordsScreen(modifier = modifier)
+            RecordsScreen()
         }
         // 건강
         composable(route = Route.Health.route) {
-            HealthScreen(modifier = modifier)
+            HealthScreen()
         }
         // 금융쇼핑
         composable(route = Route.Shopping.route) {
-            ShoppingScreen(modifier = modifier)
+            ShoppingScreen()
         }
     }
 }
