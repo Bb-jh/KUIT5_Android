@@ -182,82 +182,39 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                 AssetInfoContainer(
                     modifier = modifier,
                     title = "입출금",
+                    balance = "234,567원",
                     assetList = listOf(
                         AssetData(
                             icon = R.drawable.img_kakao_icon,
                             name = "입출금통장",
-                            value = "1,000,000원"
-                        ),
+                            value = "234,567원"
+                        )
+                    )
+                )
+                Spacer(modifier=modifier.size(28.dp))
+                AssetInfoContainer(
+                    modifier = modifier,
+                    title = "예금",
+                    balance = "1,000,000원",
+                    assetList = listOf(
                         AssetData(
                             icon = R.drawable.img_kakao_icon,
-                            name = "입출금통장",
+                            name = "정기예금",
                             value = "1,000,000원"
-                        ),
+                        )
+                    )
+                )
+                Spacer(modifier=modifier.size(28.dp))
+                AssetInfoContainer(
+                    modifier = modifier,
+                    title = "현금",
+                    balance = "0원",
+                    assetList = listOf(
                         AssetData(
-                            icon = R.drawable.img_kakao_icon,
-                            name = "입출금통장",
-                            value = "1,000,000원"
-                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        ),
-//                        AssetData(
-//                            icon = R.drawable.img_kakao_icon,
-//                            name = "입출금통장",
-//                            value = "1,000,000원"
-//                        )
+                            icon = R.drawable.img_assets_sh,
+                            name = "현금",
+                            value = "0원"
+                        )
                     )
                 )
             }

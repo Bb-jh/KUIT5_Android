@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.kuit.kuit5.R
 import com.kuit.kuit5.model.AssetData
 
@@ -19,6 +20,7 @@ import com.kuit.kuit5.model.AssetData
 fun AssetInfoContainer(
     modifier: Modifier = Modifier,
     title: String,
+    balance: String,
     assetList: List<AssetData>
 ) {
     Column(
@@ -30,8 +32,16 @@ fun AssetInfoContainer(
             horizontalArrangement = Arrangement.SpaceBetween
         )
         {
-            Text(text = title)
-            Text(text = "234,567원")
+            Text(
+                text = title,
+                color = Color(0xFF666668),
+                fontSize = 12.sp
+            )
+            Text(
+                text = balance,
+                color = Color(0xFF666668),
+                fontSize = 12.sp
+            )
         }
         HorizontalDivider(
             modifier = modifier
@@ -74,6 +84,7 @@ private fun AssetInfoContainerPreview() {
 
     AssetInfoContainer(
         title = "입출금",
+        balance = "1,000,000원",
         assetList = assetList
     )
 }
