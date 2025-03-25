@@ -106,8 +106,14 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                 Column(
                     modifier = modifier
                 ) {
-                    Text("쿠잇님의 순자산")    //Todo: 텍스트 구현
-                    Text("1,234,567원")
+                    Text(
+                        text = "쿠잇님의 순자산"
+                    )
+                    Text(
+                        text = "1,234,567원",
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 }
                 Button(
                     modifier = modifier
@@ -123,7 +129,10 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         contentColor = Color(0xFF666668)
                     ),
                 ) {
-                    Text("분석")
+                    Text(
+                        text = "분석",
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             }
             Spacer(modifier = modifier.size(14.dp))
@@ -138,7 +147,8 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     Row(
                         modifier = modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 16.dp, vertical = 16.dp)
+                            .padding(horizontal = 16.dp, vertical = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
                             modifier = modifier.size(42.dp),
@@ -147,8 +157,18 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         )
                         Spacer(modifier = modifier.size(16.dp))
                         Column {
-                            Text("티맵 대리 1만원 쿠폰 받으세요")
-                            Text("3월 한정 선착순 1만명 혜택")
+                            Text(
+                                text = "티맵 대리 1만원 쿠폰 받으세요",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = modifier.size(10.dp))
+                            Text(
+                                text = "3월 한정 선착순 1만명 혜택",
+                                fontSize = 10.sp,
+                                color = Color(0xFF666688)
+
+                            )
                         }
                     }
                 }
@@ -161,11 +181,18 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     .padding(horizontal = 20.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "계좌 · 현금")
+                Text(
+                    text = "계좌 · 현금",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold
+                )
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "1,234,567원")
+                    Text(
+                        text = "1,234,567원",
+                        color = Color(0xFF666688)
+                    )
                     Icon(
                         painter = painterResource(id = R.drawable.ic_assets_right_arrow),
                         contentDescription = "right arrow"
@@ -191,7 +218,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         )
                     )
                 )
-                Spacer(modifier=modifier.size(28.dp))
+                Spacer(modifier = modifier.size(28.dp))
                 AssetInfoContainer(
                     modifier = modifier,
                     title = "예금",
@@ -204,7 +231,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         )
                     )
                 )
-                Spacer(modifier=modifier.size(28.dp))
+                Spacer(modifier = modifier.size(28.dp))
                 AssetInfoContainer(
                     modifier = modifier,
                     title = "현금",
