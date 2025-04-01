@@ -26,7 +26,9 @@ import com.kuit.kuit5.model.AssetData
 @Composable
 fun AssetCheckContainer(
     modifier: Modifier = Modifier,
-    asset: AssetData
+    icon: Int,
+    name: String,
+    description: String
 ) {
     Column(
         modifier = modifier
@@ -41,7 +43,7 @@ fun AssetCheckContainer(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = asset.name,
+                text = name,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold
             )
@@ -64,12 +66,12 @@ fun AssetCheckContainer(
             ) {
                 Icon(
                     modifier = modifier.size(30.dp),
-                    painter = painterResource(id = asset.icon),
+                    painter = painterResource(id = icon),
                     contentDescription = "assets check image",
                     tint = Color.Unspecified
                 )
                 Text(
-                    text = asset.value,
+                    text = description,
                     fontSize = 14.sp
                 )
             }
@@ -97,10 +99,9 @@ fun AssetCheckContainer(
 @Preview(showBackground = true)
 @Composable
 private fun AssetCheckContainerPreview() {
-    val asset = AssetData(
+    AssetCheckContainer(
         icon = R.drawable.img_assets_card,
         name = "카드",
-        value = "내가 맞는 추천카드는?"
+        description = "내가 맞는 추천카드는?"
     )
-    AssetCheckContainer(asset = asset)
 }

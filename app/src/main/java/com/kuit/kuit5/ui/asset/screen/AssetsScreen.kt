@@ -52,7 +52,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             .background(Color.White)
     ) {
         TopAppBar(
-            modifier = modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = Color.White
             ),
@@ -66,7 +66,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             },
             actions = {
                 Row(
-                    modifier = modifier.padding(20.dp),
+                    modifier = Modifier.padding(20.dp),
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     Icon(
@@ -94,17 +94,17 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
         )
         // TopAppBar 제외한 화면
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxWidth()
                 .verticalScroll(state = scrollState)
         ) {
             Box(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp)
             ) {
                 Column(
-                    modifier = modifier
+                    modifier = Modifier
                 ) {
                     Text(
                         text = "쿠잇님의 순자산"
@@ -116,7 +116,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     )
                 }
                 Button(
-                    modifier = modifier
+                    modifier = Modifier
                         .size(58.dp, 38.dp)
                         .align(Alignment.CenterEnd),
                     contentPadding = PaddingValues(0.dp),
@@ -135,34 +135,34 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     )
                 }
             }
-            Spacer(modifier = modifier.size(14.dp))
+            Spacer(modifier = Modifier.size(14.dp))
             // Tmap 광고
             Card(
-                modifier = modifier
+                modifier = Modifier
                     .padding(horizontal = 20.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color(0xFFF3F4F6)
                 ),
                 content = {
                     Row(
-                        modifier = modifier
+                        modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp, vertical = 16.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(
-                            modifier = modifier.size(42.dp),
+                            modifier = Modifier.size(42.dp),
                             painter = painterResource(id = R.drawable.img_assets_tmap),
                             contentDescription = "tmap"
                         )
-                        Spacer(modifier = modifier.size(16.dp))
+                        Spacer(modifier = Modifier.size(16.dp))
                         Column {
                             Text(
                                 text = "티맵 대리 1만원 쿠폰 받으세요",
                                 fontSize = 16.sp,
                                 fontWeight = FontWeight.Bold
                             )
-                            Spacer(modifier = modifier.size(10.dp))
+                            Spacer(modifier = Modifier.size(10.dp))
                             Text(
                                 text = "3월 한정 선착순 1만명 혜택",
                                 fontSize = 10.sp,
@@ -173,10 +173,10 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     }
                 }
             )
-            Spacer(modifier = modifier.size(22.dp))
+            Spacer(modifier = Modifier.size(22.dp))
             // 계좌, 현금
             Row(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -200,14 +200,14 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                 }
             }
             // 입출금
-            Spacer(modifier = modifier.size(30.dp))
+            Spacer(modifier = Modifier.size(30.dp))
             Column(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp)
             ) {
                 AssetInfoContainer(
-                    modifier = modifier,
+                    modifier = Modifier,
                     title = "입출금",
                     balance = "234,567원",
                     assetList = listOf(
@@ -218,9 +218,9 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         )
                     )
                 )
-                Spacer(modifier = modifier.size(28.dp))
+                Spacer(modifier = Modifier.size(28.dp))
                 AssetInfoContainer(
-                    modifier = modifier,
+                    modifier = Modifier,
                     title = "예금",
                     balance = "1,000,000원",
                     assetList = listOf(
@@ -231,9 +231,9 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         )
                     )
                 )
-                Spacer(modifier = modifier.size(28.dp))
+                Spacer(modifier = Modifier.size(28.dp))
                 AssetInfoContainer(
-                    modifier = modifier,
+                    modifier = Modifier,
                     title = "현금",
                     balance = "0원",
                     assetList = listOf(
@@ -245,21 +245,21 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     )
                 )
             }
-            Spacer(modifier = modifier.size(22.dp))
+            Spacer(modifier = Modifier.size(22.dp))
             Spacer(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(10.dp)
                     .background(Color(0xFFF3F4F6))
             )
-            Spacer(modifier = modifier.size(24.dp))
+            Spacer(modifier = Modifier.size(24.dp))
             //페이머니
             Column(
-                modifier = modifier
+                modifier = Modifier
                     .padding(horizontal = 20.dp)
             ) {
                 Row(
-                    modifier = modifier
+                    modifier = Modifier
                         .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
 
@@ -274,20 +274,20 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         color = Color(0xFF666668)
                     )
                 }
-                Spacer(modifier = modifier.size(30.dp))
+                Spacer(modifier = Modifier.size(30.dp))
                 Row(
-                    modifier = modifier
+                    modifier = Modifier
                         .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Row(
-                        modifier = modifier,
+                        modifier = Modifier,
                         horizontalArrangement = Arrangement.spacedBy(10.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
-                            modifier = modifier.size(30.dp),
+                            modifier = Modifier.size(30.dp),
                             painter = painterResource(id = R.drawable.img_assets_banksal),
                             contentDescription = "banksal image",
                             tint = Color.Unspecified
@@ -297,16 +297,16 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     Text(text = "0원")
                 }
             }
-            Spacer(modifier = modifier.size(22.dp))
+            Spacer(modifier = Modifier.size(22.dp))
             Spacer(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(10.dp)
                     .background(Color(0xFFF3F4F6))
             )
             //신용
             Row(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(68.dp)
                     .padding(horizontal = 20.dp),
@@ -332,51 +332,46 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             // 확인하기 x3
             Column {
                 Spacer(
-                    modifier = modifier
+                    modifier = Modifier
                         .fillMaxWidth()
                         .height(10.dp)
                         .background(Color(0xFFF3F4F6))
                 )
                 AssetCheckContainer(
-                    modifier = modifier,
-                    asset = AssetData(
-                        icon = R.drawable.img_assets_card,
-                        name = "카드",
-                        value = "내가 맞는 추천카드는?"
-                    )
+                    modifier = Modifier,
+                    icon = R.drawable.img_assets_card,
+                    name = "카드",
+                    description = "내가 맞는 추천카드는?"
+
                 )
                 Spacer(
-                    modifier = modifier
+                    modifier = Modifier
                         .fillMaxWidth()
                         .height(10.dp)
                         .background(Color(0xFFF3F4F6))
                 )
                 AssetCheckContainer(
-                    modifier = modifier,
-                    asset = AssetData(
-                        icon = R.drawable.img_assets_house,
-                        name = "대출",
-                        value = "내 최저 금리는?"
-                    )
+                    modifier = Modifier,
+                    icon = R.drawable.img_assets_house,
+                    name = "대출",
+                    description = "내 최저 금리는?"
                 )
                 Spacer(
-                    modifier = modifier
+                    modifier = Modifier
                         .fillMaxWidth()
                         .height(10.dp)
                         .background(Color(0xFFF3F4F6))
                 )
                 AssetCheckContainer(
-                    modifier = modifier,
-                    asset = AssetData(
-                        icon = R.drawable.img_assets_shield,
-                        name = "보험",
-                        value = "보험료 낸 만큼 보장받을 수 있을까?"
-                    )
+                    modifier = Modifier,
+                    icon = R.drawable.img_assets_shield,
+                    name = "보험",
+                    description = "보험료 낸 만큼 보장받을 수 있을까?"
                 )
             }
             // 편집하기 | 추가하기
             Row(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .height(78.dp)
                     .background(Color(0xFFF3F4F6)),
@@ -388,7 +383,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     color = Color(0xFF666668)
                 )
                 VerticalDivider(
-                    modifier = modifier
+                    modifier = Modifier
                         .height(22.dp)
                         .padding(horizontal = 46.dp),
                     color = Color(0xFF9FA5B0)
@@ -398,12 +393,12 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     color = Color(0xFF666668)
                 )
             }
-            Spacer(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .height(150.dp)
-                    .background(Color.Black)
-            )
+//            Spacer(
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .height(150.dp)
+//                    .background(Color.Black)
+//            )
         }
     }
 }
