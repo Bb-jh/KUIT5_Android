@@ -40,7 +40,7 @@ fun HomeAssetsCardItem(
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
             .background(color = colors.white)
-            .padding(24.dp, 20.dp)
+            .padding(20.dp, 24.dp)
     ) {
         Column(modifier = modifier.fillMaxWidth()) {
             Row(

@@ -31,11 +31,10 @@ fun HomeAccountCardItem(
 ) {
     Box(
         modifier = modifier
-            .height(258.dp)
             .fillMaxWidth()
             .clip(RoundedCornerShape(16.dp))
             .background(color = colors.white)
-            .padding(24.dp, 20.dp)
+            .padding(20.dp, 24.dp)
     ) {
         Column(modifier = modifier.fillMaxWidth()) {
             Row(
@@ -63,14 +62,14 @@ fun HomeAccountCardItem(
             Text(
                 modifier = modifier
                     .align(Alignment.End)
-                    .padding(bottom = 20.dp),
+                    .padding(bottom = 22.dp),
                 text = "어제보다",
                 style = typography.body_02_R_12,
                 color = colors.gray400
             )
             HomeAccountCardDetail(
                 money = "234,567원",
-                account = "계좌 · 현금",
+                account = "입출금통장",
                 changedMoney = "3,300원",
                 icon = R.drawable.img_kakao_icon
             )

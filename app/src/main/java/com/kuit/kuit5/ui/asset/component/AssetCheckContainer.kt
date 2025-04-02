@@ -21,6 +21,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kuit.kuit5.R
+import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
+import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
 
 @Composable
 fun AssetCheckContainer(
@@ -43,8 +45,8 @@ fun AssetCheckContainer(
         ) {
             Text(
                 text = name,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold
+                style = typography.head_03_B_16,
+                color = colors.black
             )
             Icon(
                 painter = painterResource(id = R.drawable.ic_assets_plus),
@@ -71,7 +73,8 @@ fun AssetCheckContainer(
                 )
                 Text(
                     text = description,
-                    fontSize = 14.sp
+                    style = typography.body_01_R_14,
+                    color = colors.gray500
                 )
             }
             Column(
@@ -79,8 +82,8 @@ fun AssetCheckContainer(
             ) {
                 Text(
                     text = "확인하기",
-                    fontSize = 14.sp,
-                    color = Color(0xFF9FA5B0)
+                    style = typography.body_01_R_14,
+                    color = colors.gray400
                 )
                 HorizontalDivider(
                     modifier = modifier

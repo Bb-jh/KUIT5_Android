@@ -31,14 +31,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.kuit.kuit5.R
 import com.kuit.kuit5.model.AssetData
 import com.kuit.kuit5.ui.asset.component.AssetCheckContainer
 import com.kuit.kuit5.ui.asset.component.AssetInfoContainer
+import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
+import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -59,9 +59,8 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             title = {
                 Text(
                     text = "자산",
-                    color = Color.Black,
-                    fontSize = 24.sp,
-                    fontWeight = FontWeight.Bold
+                    style = typography.head_01_B_24,
+                    color = colors.black
                 )
             },
             actions = {
@@ -107,12 +106,15 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     modifier = Modifier
                 ) {
                     Text(
-                        text = "쿠잇님의 순자산"
+                        text = "쿠잇님의 순자산",
+                        style = typography.body_01_R_14,
+                        color = colors.black,
+                        modifier = Modifier.padding(bottom = 10.dp)
                     )
                     Text(
                         text = "1,234,567원",
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold
+                        style = typography.head_01_B_24,
+                        color = colors.black
                     )
                 }
                 Button(
@@ -126,12 +128,13 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                     },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xFFF3F4F6),
-                        contentColor = Color(0xFF666668)
+                        contentColor = colors.gray500,
                     ),
                 ) {
                     Text(
                         text = "분석",
-                        fontWeight = FontWeight.Bold
+                        style = typography.head_04_SB_14,
+                        color = colors.gray500,
                     )
                 }
             }
@@ -159,15 +162,14 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                         Column {
                             Text(
                                 text = "티맵 대리 1만원 쿠폰 받으세요",
-                                fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
+                                style = typography.head_03_SB_16,
+                                color = colors.black
                             )
                             Spacer(modifier = Modifier.size(10.dp))
                             Text(
                                 text = "3월 한정 선착순 1만명 혜택",
-                                fontSize = 10.sp,
-                                color = Color(0xFF666688)
-
+                                style = typography.caption_01_R_10,
+                                color = colors.gray500
                             )
                         }
                     }
@@ -183,15 +185,16 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             ) {
                 Text(
                     text = "계좌 · 현금",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold
+                    style = typography.head_03_B_16,
+                    color = colors.black
                 )
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = "1,234,567원",
-                        color = Color(0xFF666688)
+                        style = typography.body_01_M_14,
+                        color = colors.gray500
                     )
                     Icon(
                         painter = painterResource(id = R.drawable.ic_assets_right_arrow),
@@ -266,12 +269,13 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                 ) {
                     Text(
                         text = "페이머니",
-                        fontSize = 16.sp,
-                        fontWeight = FontWeight.Bold
+                        style = typography.head_03_B_16,
+                        color = colors.black
                     )
                     Text(
                         text = "0원",
-                        color = Color(0xFF666668)
+                        style = typography.body_01_M_14,
+                        color = colors.gray500
                     )
                 }
                 Spacer(modifier = Modifier.size(30.dp))
@@ -292,9 +296,15 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                             contentDescription = "banksal image",
                             tint = Color.Unspecified
                         )
-                        Text(text = "뱅샐머니")
+                        Text(
+                            text = "뱅샐머니", style = typography.body_01_R_14,
+                            color = colors.gray500
+                        )
                     }
-                    Text(text = "0원")
+                    Text(
+                        text = "0원", style = typography.body_01_M_14,
+                        color = colors.black
+                    )
                 }
             }
             Spacer(modifier = Modifier.size(22.dp))
@@ -315,17 +325,19 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             ) {
                 Text(
                     text = "신용",
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold
+                    style = typography.head_03_B_16,
+                    color = colors.black
                 )
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "750점")
+                    Text(
+                        text = "750점", style = typography.head_04_SB_14,
+                        color = colors.gray500
+                    )
                     Icon(
                         painter = painterResource(id = R.drawable.ic_assets_right_arrow),
                         contentDescription = "right arrow",
-
                         )
                 }
             }
@@ -380,7 +392,8 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
             ) {
                 Text(
                     text = "편집하기",
-                    color = Color(0xFF666668)
+                    style = typography.body_01_M_14,
+                    color = colors.gray500
                 )
                 VerticalDivider(
                     modifier = Modifier
@@ -390,7 +403,8 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
                 )
                 Text(
                     text = "추가하기",
-                    color = Color(0xFF666668)
+                    style = typography.body_01_M_14,
+                    color = colors.gray500
                 )
             }
 //            Spacer(
@@ -404,7 +418,7 @@ fun AssetsScreen(modifier: Modifier = Modifier) {
 }
 
 //프리뷰 단축키: Prev
-@Preview(showBackground = true)
+@Preview(showBackground = true, heightDp = 1500 )
 @Composable
 private fun AssetsScreenPreview() {
     AssetsScreen()

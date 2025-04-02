@@ -3,15 +3,21 @@ package com.kuit.kuit5.ui.home.screen.screen
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -27,6 +33,7 @@ import com.kuit.kuit5.ui.home.screen.components.HomeAssetsCardItem
 import com.kuit.kuit5.ui.home.screen.components.HomeBannerItem
 import com.kuit.kuit5.ui.home.screen.components.HomeEventItem
 import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
+import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -110,8 +117,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(20.dp, 0.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                    .padding(horizontal = 20.dp, 0.dp),
+                verticalArrangement = Arrangement. spacedBy(16.dp)
             ) {
                 HomeAccountCardItem(
                     account = "입출금 계좌",
@@ -162,9 +169,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     cardValue = "3월 카드 지출",
                     isArrow = false
                 )
-
                 //HomeAssetsCardItem
             }
+            Spacer(modifier = Modifier.size(16.dp))
         }
 
     }
