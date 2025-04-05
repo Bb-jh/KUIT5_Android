@@ -1,9 +1,8 @@
-package com.kuit.kuit5.ui.home.screen.screen
+package com.kuit.kuit5.ui.home.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,13 +10,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -28,12 +23,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kuit.kuit5.R
 import com.kuit.kuit5.model.HomeData
-import com.kuit.kuit5.ui.home.screen.components.HomeAccountCardItem
-import com.kuit.kuit5.ui.home.screen.components.HomeAssetsCardItem
-import com.kuit.kuit5.ui.home.screen.components.HomeBannerItem
-import com.kuit.kuit5.ui.home.screen.components.HomeEventItem
+import com.kuit.kuit5.ui.home.components.HomeAccountCardItem
+import com.kuit.kuit5.ui.home.components.HomeAssetsCardItem
+import com.kuit.kuit5.ui.home.components.HomeBannerItem
+import com.kuit.kuit5.ui.home.components.HomeEventItem
 import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
-import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
+import com.kuit.kuit5.util.toDecimalFormat
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -118,29 +113,31 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 20.dp, 0.dp),
-                verticalArrangement = Arrangement. spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 HomeAccountCardItem(
                     account = "입출금 계좌",
-                    money = "234,567원"
+                    money = 234567.toDecimalFormat()+"원"
                 )
                 //HomeAccountCardItem
                 HomeAssetsCardItem(
                     asset = "순자산",
-                    money = "1,234,567원",
-                    notice = "지난 방문일보다 4,500원 줄었어요",
+                    money = 1234567.toDecimalFormat()+"원",
+                    noticeStart = "지난 방문일보다",
+                    noticeMiddle = 4500.toDecimalFormat()+"원",
+                    noticeEnd = "줄었어요",
                     button = "송금",
                     assetList = listOf(
                         HomeData(
                             asset = "계좌 · 현금",
-                            money = "234,567원",
-                            changedMoney = "4,500원",
+                            money = 234567.toDecimalFormat()+"원",
+                            changedMoney = 4500.toDecimalFormat()+"원",
                             icon = R.drawable.img_kakao_icon
                         ),
                         HomeData(
-                            money = "1,000,000원",
+                            money = 1000000.toDecimalFormat()+"원",
                             asset = "예적금",
-                            changedMoney = "10,000원",
+                            changedMoney = 10000.toDecimalFormat()+"원",
                             icon = R.drawable.img_kakao_icon
                         )
                     ),
@@ -149,18 +146,20 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 )
                 HomeAssetsCardItem(
                     asset = "이번 달 지출",
-                    money = "198,000원",
-                    notice = "지난달 같은 기간보다 53,000원 덜 썼어요",
+                    money = 198000.toDecimalFormat()+"원",
+                    noticeStart = "지난달 같은 기간보다",
+                    noticeMiddle = 53000.toDecimalFormat()+"원",
+                    noticeEnd = "덜 썼어요",
                     button = "확인",
                     assetList = listOf(
                         HomeData(
                             asset = "오늘 지출",
-                            money = "21,500원",
+                            money = 21500.toDecimalFormat() + "원",
                             changedMoney = "",
                             icon = R.drawable.img_home_bank
                         ),
                         HomeData(
-                            money = "3,500원",
+                            money = 3500.toDecimalFormat()+"원",
                             asset = "어제 지출",
                             changedMoney = "",
                             icon = R.drawable.img_home_bank

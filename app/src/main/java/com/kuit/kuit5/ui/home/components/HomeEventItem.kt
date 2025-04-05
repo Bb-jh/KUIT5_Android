@@ -1,4 +1,4 @@
-package com.kuit.kuit5.ui.home.screen.components
+package com.kuit.kuit5.ui.home.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

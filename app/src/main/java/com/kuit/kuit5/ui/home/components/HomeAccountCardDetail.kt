@@ -1,4 +1,4 @@
-package com.kuit.kuit5.ui.home.screen.components
+package com.kuit.kuit5.ui.home.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -39,9 +39,9 @@ fun HomeAccountCardDetail(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Row (
+            Row(
                 verticalAlignment = Alignment.CenterVertically
-            ){
+            ) {
                 Icon(
                     painter = painterResource(icon), contentDescription = "AccountCard img",
                     modifier = modifier.size(30.dp),

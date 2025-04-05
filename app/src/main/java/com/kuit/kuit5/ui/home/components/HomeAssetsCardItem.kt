@@ -1,4 +1,4 @@
-package com.kuit.kuit5.ui.home.screen.components
+package com.kuit.kuit5.ui.home.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import com.kuit.kuit5.R
 import com.kuit.kuit5.components.BankSaladGrayButton
 import com.kuit.kuit5.model.HomeData
-import com.kuit.kuit5.ui.asset.component.AssetInfoItem
 import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
 import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
 
@@ -29,7 +28,9 @@ fun HomeAssetsCardItem(
     modifier: Modifier = Modifier,
     asset: String,
     money: String,
-    notice: String,
+    noticeStart: String,
+    noticeMiddle: String,
+    noticeEnd: String,
     button: String,
     assetList: List<HomeData>,
     cardValue: String,
@@ -65,27 +66,35 @@ fun HomeAssetsCardItem(
                 }
                 BankSaladGrayButton(value = button)
             }
-            Text(
-                modifier = modifier
-                    .padding(bottom = 28.dp),
-                text = notice,
-                style = typography.body_02_R_12,
-                color = colors.black
-            )
-
+            Row(modifier = modifier.padding(bottom = 28.dp)) {
+                Text(
+                    text = noticeStart+" ",
+                    style = typography.body_02_R_12,
+                    color = colors.black
+                )
+                Text(
+                    text = noticeMiddle+" ",
+                    style = typography.body_02_SB_12,
+                    color = colors.green
+                )
+                Text(
+                    text = noticeEnd,
+                    style = typography.body_02_R_12,
+                    color = colors.black
+                )
+            }
             Column(
                 modifier = modifier.fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(24.dp)
             ) {
                 assetList.forEach { asset ->
-                    HomeAssetsCardDetail(asset = asset, isArrow =  isArrow)
+                    HomeAssetsCardDetail(asset = asset, isArrow = isArrow)
                 }
             }
             Spacer(modifier = modifier.size(24.dp))
             HomeAssetsDiagnosisCard(value = cardValue)
         }
     }
-
 }
 
 @Preview
@@ -105,11 +114,12 @@ private fun HomeAssetsCardItem() {
             icon = R.drawable.img_kakao_icon
         ),
     )
-
     HomeAssetsCardItem(
         asset = "순자산",
         money = "1,234,567원",
-        notice = "지난 방문일보다 4,500원 줄었어요",
+        noticeStart = "지난 방문일보다",
+        noticeMiddle = "4,500원",
+        noticeEnd = "줄었어요",
         button = "송금",
         assetList = assetList,
         cardValue = "쌓인 예적금 이자 확인하고 진단받기",

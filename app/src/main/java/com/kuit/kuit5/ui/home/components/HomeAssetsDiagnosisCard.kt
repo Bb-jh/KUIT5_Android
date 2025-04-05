@@ -1,9 +1,7 @@
-package com.kuit.kuit5.ui.home.screen.components
+package com.kuit.kuit5.ui.home.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -22,31 +20,24 @@ import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
 import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
 
 @Composable
-fun HomeAccountGoalCard(
+fun HomeAssetsDiagnosisCard(
     modifier: Modifier = Modifier,
-    icon: Int,
     value: String
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = colors.apricot
+            containerColor = colors.gray200
         ),
         content = {
             Row(
                 modifier = modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 16.dp),
+                    .padding(horizontal = 12.dp, vertical = 14.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Image(
-                        modifier = modifier.size(28.dp),
-                        painter = painterResource(id = icon),
-                        contentDescription = "pig img"
-                    )
-                    Spacer(modifier = modifier.size(8.dp))
                     Text(
                         text = value,
                         style = typography.body_02_R_12,
@@ -56,8 +47,7 @@ fun HomeAccountGoalCard(
                 Icon(
                     painter = painterResource(R.drawable.ic_assets_right_arrow),
                     contentDescription = "right arrow",
-                    modifier = modifier
-                        .size(12.dp),
+                    modifier = modifier.size(12.dp),
                     tint = colors.gray400
                 )
 
@@ -68,6 +58,6 @@ fun HomeAccountGoalCard(
 
 @Preview
 @Composable
-private fun HomeAccountGoalCardPreview() {
-    HomeAccountGoalCard(icon = R.drawable.img_home_pig, value = "목표를 설정하고 종잣돈을 모아보세요")
+private fun HomeAssetsDiagnosisCardPreview() {
+    HomeAssetsDiagnosisCard(value = "쌓인 예적금 이자 확인하고 진단받기")
 }
