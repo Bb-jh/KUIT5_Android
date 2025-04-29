@@ -13,17 +13,17 @@ import com.kuit.kuit5.ui.theme.BankSaladTheme.typography
 @Composable
 fun ShoppingAccountDetail(
     modifier: Modifier = Modifier,
-    question: String,
-    answer: String
+    title: String,
+    content: String
 ) {
 
     Column(modifier = modifier.fillMaxWidth()) {
         Text(
-            text = question,
+            text = title,
             style = typography.head_03_R_16,
             modifier = modifier.padding(bottom = 10.dp)
         )
-        Text(text = answer, style = typography.head_02_B_20)
+        Text(text = content, style = typography.head_02_B_20)
     }
 
 
@@ -33,5 +33,5 @@ fun ShoppingAccountDetail(
 @Preview(showBackground = true)
 @Composable
 private fun ShoppingAccountDetailPreview() {
-    ShoppingAccountDetail(question = "가입 연령", answer = "19~34세")
+    ShoppingAccountDetail(title = "가입 연령", content = "19~34세")
 }

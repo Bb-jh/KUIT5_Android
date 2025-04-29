@@ -79,7 +79,6 @@ fun KuitNavGraph(
                     onNavigateToCreateAccountResult = {
                         navController.navigate(Route.CreateAccountResult.route) {
                             launchSingleTop = true
-                            popUpTo(Route.Shopping.route){inclusive=false}
                         }
                     }
                 )
@@ -93,6 +92,7 @@ fun KuitNavGraph(
                     onNavigateToShopping = {
                         navController.navigate(Route.Shopping.route) {
                             launchSingleTop = true;
+                            popUpTo(Route.Shopping.route) { inclusive = false }
                         }
                     }
                 )

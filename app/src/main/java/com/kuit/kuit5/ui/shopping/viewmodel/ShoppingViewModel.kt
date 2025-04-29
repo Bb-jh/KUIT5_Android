@@ -1,13 +1,11 @@
 package com.kuit.kuit5.ui.shopping.viewmodel
 
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.kuit.kuit5.R
 import com.kuit.kuit5.model.ShoppingData
 
 class ShoppingViewModel : ViewModel() {
-    val KBShoppingProduct = ShoppingData(
+    val kbShoppingProduct = ShoppingData(
         icon = R.drawable.img_kb_label,
         name = "KB 청년도약계좌",
         age = "19~34세",

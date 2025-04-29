@@ -2,26 +2,21 @@ package com.kuit.kuit5.ui.shopping.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.kuit.kuit5.R
 import com.kuit.kuit5.ui.shopping.components.ShoppingGrayButton
 import com.kuit.kuit5.ui.shopping.viewmodel.ShoppingViewModel
 import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
@@ -51,12 +46,12 @@ fun ShoppingScreen(
                 )
             ) {
                 Image(
-                    painter = painterResource(viewModel.KBShoppingProduct.icon),
+                    painter = painterResource(viewModel.kbShoppingProduct.icon),
                     contentDescription = "KB img",
                     modifier = Modifier.size(280.dp, 145.dp)
                 )
                 Spacer(modifier = Modifier.size(20.dp))
-                Text(text = viewModel.KBShoppingProduct.name, style = typography.head_02_B_20)
+                Text(text = viewModel.kbShoppingProduct.name, style = typography.head_02_B_20)
                 Spacer(modifier = Modifier.size(20.dp))
                 ShoppingGrayButton(
                     modifier = Modifier,

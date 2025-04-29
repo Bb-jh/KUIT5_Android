@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,7 +18,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.kuit.kuit5.R
 import com.kuit.kuit5.ui.shopping.components.ShoppingGrayButton
 import com.kuit.kuit5.ui.shopping.viewmodel.ShoppingViewModel
 import com.kuit.kuit5.ui.theme.BankSaladTheme.colors
@@ -40,7 +38,7 @@ fun CreateAccountScreen(
             modifier = Modifier.padding(20.dp)
         ) {
             Image(
-                painter = painterResource(viewModel.KBShoppingProduct.icon),
+                painter = painterResource(viewModel.kbShoppingProduct.icon),
                 contentDescription = "KB img",
                 modifier = Modifier
                     .size(320.dp, 145.dp)
@@ -48,7 +46,7 @@ fun CreateAccountScreen(
             Spacer(modifier = Modifier.size(30.dp))
             Column(verticalArrangement = Arrangement.spacedBy(30.dp)) {
                 Text(text = "유의할 점", style = typography.head_02_B_20)
-                Text(text = viewModel.KBShoppingProduct.note, style = typography.head_03_R_16)
+                Text(text = viewModel.kbShoppingProduct.note, style = typography.head_03_R_16)
             }
         }
         Box(
